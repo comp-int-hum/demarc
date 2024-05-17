@@ -1,0 +1,104 @@
+{
+    "001" : "control_number",
+    "003" : "control_number_organization",
+    "005" : {"name" : "latest_change", "type" : "timestamp"},
+    "006" : {
+        #(0, 1) : {
+        #    ("a", "c") : { # Books
+        #        (5, 6) : "target_audience",
+        #        (6, 7) : "form_of_item",
+        #        (7, 11) : "nature_of_contents",
+        #        (11, 12) : "government_publication",
+        #        (12, 13) : "conference_publication",
+        #        (13, 14) : "festschrift",
+        #        (14, 15) : "index",
+        #        (15, 16) : "undefined",
+        #        (16, 17) : "literary_form",
+        #        (17, 18) : "biography"
+        #    },
+        #    ("c", "d", "i", "j") : { # Music
+        #    },
+        #    ("e", "f") : { # Maps
+        #    },
+        #    ("g", "k") : { # Visual Materials
+        #    },
+        #    ("m",) : { # Computer Files
+        #    },
+        #    ("p",) : { # Mixed Materials
+        #    },
+        #    ("s",) : { # Continuing Resources
+        #    }
+        #}
+    },
+    "007" : { # physical description
+        #(0, 1) : { # Category of Material
+            "a" : {
+            },
+            "c" : {
+            },
+            "d" : {
+            },
+            "f" : {
+            },
+            "g" : {
+            },
+            "h" : {
+            },
+            "k" : {
+            },
+            "m" : {
+            },
+            "o" : {
+            },
+            "q" : {
+            },
+            "r" : {
+            },
+            "s" : {
+            },
+            "t" : {
+            },
+            "v" : {
+            },
+            "z" : {
+            }
+        #}
+    },
+    "008" : { # data elements
+        #(0, 6) : ("date_entered", parse_entry_date),
+        #(6, 7) : "type_of_date",
+        #(7, 11) : ("first_date", parse_year),
+        #(11, 15) : ("second_date", parse_year),
+        #(15, 18) : "place_of_publication",
+        #(35, 38) : "language",
+        #(38, 39) : "modified_record",
+        #(39, 40) : "cataloguing_source",
+        "ht_type" : {
+            "BK" : { # Books
+                #(22, 23) : "target_audience",
+                #(23, 24) : "form_of_item",
+                #(24, 28) : "nature_of_contents",
+                #(28, 29) : "government_publication",
+                #(29, 30) : "conference_publication",
+                #(30, 31) : "festschrift",
+                #(31, 32) : "index",
+                #(32, 33) : "undefined",
+                #(33, 34) : "literary_form",
+                #(34, 35) : "biography"
+            },
+            "CF" : { # Computer Files
+            },
+            "MP" : { # Maps
+            },
+            "MU" : { # Music
+            },
+            "CR" : { # Continuing Resources
+            },
+            "VM" : { # Visual Materials
+            },
+            "MX" : { # Mixed Materials
+            }
+        }
+    },
+    "009" : "local_use"
+}

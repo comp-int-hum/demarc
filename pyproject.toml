@@ -1,0 +1,35 @@
+[metadata]
+name = "demarc"
+
+[options]
+package_dir = "src"
+
+[options.packages.find]
+where = "src"
+
+[options.package_data]
+pyochre.data = "*.json"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "demarc"
+version = "0.0.1"
+readme = "README.rst"
+authors = [
+  {name = "Tom Lippincott", email="tom.lippincott@jhu.edu"}
+]
+maintainers = [
+  {name = "Tom Lippincott", email="tom.lippincott@jhu.edu"}
+]
+keywords = []
+description = ""
+classifiers = []
+requires-python = ">=3.9"
+dependencies = [
+]
+
+[project.urls]
+repository = 'https://github.com/comp-int-hum/demarc'

@@ -1,0 +1,291 @@
+{
+    "001" : {
+	"name" : "control_number",
+	"fixed_width" : true
+    },
+    "003" : {
+	"name" : "control_number_organization",
+	"fixed_width" : true
+    },
+    "005" : {
+	"name" : "latest_change",
+	"type" : "timestamp",
+	"fixed_width" : true
+    },
+    "006" : {
+	"name" : "additional_material_characteristics",
+	"fixed_width" : true,
+	"conditional_mappings" : [
+	    {
+		"start" : 0,
+		"end" : 1,
+		"values" : ["a", "c"],
+		"mappings" : {
+		    "target_audience" : {"start" : 5, "end" : 6},
+		    "form_of_item" : {"start" : 6, "end" : 7}
+		}
+	    }
+	]
+    
+        #(0, 1) : {
+        #    ("a", "c") : { # Books
+        #        (5, 6) : "target_audience",
+        #        (6, 7) : "form_of_item",
+        #        (7, 11) : "nature_of_contents",
+        #        (11, 12) : "government_publication",
+        #        (12, 13) : "conference_publication",
+        #        (13, 14) : "festschrift",
+        #        (14, 15) : "index",
+        #        (15, 16) : "undefined",
+        #        (16, 17) : "literary_form",
+        #        (17, 18) : "biography"
+        #    },
+        #    ("c", "d", "i", "j") : { # Music
+        #    },
+        #    ("e", "f") : { # Maps
+        #    },
+        #    ("g", "k") : { # Visual Materials
+        #    },
+        #    ("m",) : { # Computer Files
+        #    },
+        #    ("p",) : { # Mixed Materials
+        #    },
+        #    ("s",) : { # Continuing Resources
+        #    }
+        #}
+    },
+    "007" : {
+	"name" : "physical_description",
+	"fixed_width" : true,
+	"conditional_mappints" : []
+        #(0, 1) : { # Category of Material
+        #    "a" : {
+        #    },
+        #    "c" : {
+        #    },
+        #    "d" : {
+        #    },
+        #    "f" : {
+        #    },
+        #    "g" : {
+        #    },
+        #    "h" : {
+        #    },
+        #    "k" : {
+        #    },
+        #    "m" : {
+        #    },
+        #    "o" : {
+        #    },
+        #    "q" : {
+        #    },
+        #    "r" : {
+        #    },
+        #    "s" : {
+        #    },
+        #    "t" : {
+        #    },
+        #    "v" : {
+        #    },
+        #    "z" : {
+        #    }
+        #}
+    },
+    "008" : {
+	"name" : "data_elements",
+	"fixed_width" : true,
+	"mappings" : {
+	    "date_entered" : {"start" : 0, "end" : 6},
+	    "type_of_date" : {"start" : 6, "end" : 7},
+	    "first_date" : {"start" : 7, "end" : 11, "type" : "year"},
+	    "second_date" : {"start" : 11, "end" : 15, "type" : "year"},
+	    "place_of_publication" : {"start" : 15, "end" : 18},
+	    "language" : {"start" : 35, "end" : 38},
+	    "modified_record" : {"start" : 38, "end" : 39},
+	    "cataloguing_source" : {"start" : 39, "end" : 40}
+	},
+	"conditional_mappings" : [
+	    {
+		"switch_name" : "hathitrust type",
+		"values" : ["BK"],
+		"mappings" : {
+		    "target_audience" : {"start" : 22, "end" : 23},
+		    "form_of_item" : {"start" : 23, "end" : 24},
+		    "nature_of_contents" : {"start" : 24, "end" : 28},
+		    "government_publication" : {"start" : 28, "end" : 29},
+		    "conference_publication" : {"start" : 29, "end" : 30},
+		    "festschrift" : {"start" : 30, "end" : 31},
+		    "index" : {"start" : 31, "end" : 32},
+		    "undefined" : {"start" : 32, "end" : 33},
+		    "literary_form" : {"start" : 33, "end" : 34},
+		    "biography" : {"start" : 34, "end" : 35}
+		}
+	    }
+	]
+        #"ht_type" : {
+        #    "CF" : { # Computer Files
+        #    },
+        #    "MP" : { # Maps
+        #    },
+        #    "MU" : { # Music
+        #    },
+        #    "CR" : { # Continuing Resources
+        #    },
+        #    "VM" : { # Visual Materials
+        #    },
+        #    "MX" : { # Mixed Materials
+        #    }
+        #}
+    },
+    "009" : {
+	"name" : "local_use",
+	"fixed_width" : true
+    },
+    "041" : {
+	"name" : "language_code",
+	"subfields" : {
+	    "a" : "language_code_of_text",
+	    "h" : "language_code_of_original"
+	}
+    },
+    "045" : {
+	#"name" : "time_period_of_content",
+	# depicted
+    },
+    "100" : {
+	"name" : "main_entry_personal_name",
+	"subfields" : {
+            "a" : "personal_name",
+            "b" : "author_numeration",
+            "c" : "author_titles",
+            "d" : {"name" : "dates_associated_with_a_name", "type" : "years"},
+            "e" : {"name" : "relator_term", "type" : "relation"},
+            "f" : {"name" : "date_of_a_work", "type" : "year"},
+            "j" : "attribution_qualifier",
+            "l" : "work_language",
+            "q" : "fuller_form_of_author_name",
+            "t" : "title_of_work",
+            "0" : "author_authority_record_control_number",
+            "1" : null,
+            "6" : "linkage"
+	}
+    },
+    "110" : {
+	"name" : "main_entry_corporate_name",
+	"subfields" : {
+            "a" : "corporate_name",
+            "b" : null,
+            "e" : null,
+            "f" : {"name" : "date_of_a_work", "type" : "year"},
+            "k" : "form_subheading",
+            "w" : null,
+            "0" : "corporate_authority_record_control_number",
+            "1" : null
+	}
+    },
+    "111" : {
+	"name" : "main_entry_meeting_name",
+	"subfields" : {
+            "a" : "meeting_name",
+            "c" : null,
+            "d" : "meeting_date",
+            "n" : "meeting_part_number",
+            "0" : "meeting_authority_record_control_number",
+            "1" : "meeting_real_world_object_uri"
+	}
+    },
+    "130" : {
+	"name" : "main_entry_uniform_title",
+	"subfields" : {
+            "a" : "uniform_title",
+            "f" : {"name" : "date_of_a_work", "type" : "year"},
+            "k" : "uniform_title_subheading",
+            "l" : "uniform_title_language",
+            "n" : "uniform_section_number",
+            "p" : null,
+            "0" : null,
+            "1" : null,
+            "6" : null
+	}
+    },
+    "240" : {
+	"name" : "uniform_title",
+	"subfields" : {
+            "a" : "uniform_title",
+            "d" : "date_of_treaty_signing",
+            "f" : {"name" : "date_of_a_work", "type" : "year"},
+            "g" : "miscellaneous_information",
+            "h" : "medium",
+            "k" : "form_subheading",
+            "l" : "language_of_a_work"
+	}
+    },
+    "245" : {
+	"name" : "title_statement",
+	"subfields" : {
+            "a" : "title",
+            "f" : {"name" : "inclusive_dates", "type" : "years"},
+            "g" : {"name" : "bulk_dates", "type" : "years"}
+	}
+    },
+    "260" : {
+	"name" : "publication_distribution_etc",
+	"subfields" : {
+            "c" : {"name" : "date_of_publication", "type" : "year"}
+	}
+    },
+    "410" : {
+	"name" : "series_statement_added_entry_corporate_name"
+    },
+    "490" : {
+	"name" : "series_statement"
+    },
+    "700" : {
+	"name" : "added_entry_personal_name",
+	"subfields" : {
+	    "a" : {"name" : "personal_name"},
+            "e" : {"name" : "relator_term", "type" : "relator"}
+	}
+    },
+    
+    "880" : {
+	"name" : "alternate_graphic_representation",
+	"subfields" : {
+            "a" : null,
+            "b" : null,
+            "c" : null,
+            "d" : null,
+            "q" : null
+	}
+    },
+    "899" : {
+	"name" : null,
+	"subfields" : {
+            "a" : null,
+            "b" : null,
+            "c" : null,
+            "7" : null
+	}
+    },
+    "970" : {
+	"name" : "hathitrust",
+        "subfields" : {
+	    "a" : "type"
+	}
+    },
+    "974" : {
+	"name" : "hathitrust",
+	"subfields" : {
+            "a" : null,
+            "b" : null,
+            "c" : "collection_code",
+            "d" : {"name" : "update_date"},
+            "q" : "rights_reason",
+            "r" : "rights_attribute",
+            "s" : "digitization_source",
+            "u" : "id",
+            "y" : {"name" : "publication_date", "type" : "year"},
+            "z" : "chronology_enumeration_information"
+	}
+    }
+}
