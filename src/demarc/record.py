@@ -299,7 +299,7 @@ class Record(dict):
     
     @property
     def htid(self):
-        return self["hathitrust_id"]
+        return self.get("hathitrust id")
 
     @property
     def language(self):
